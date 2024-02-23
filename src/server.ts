@@ -3,10 +3,9 @@ import dotenv from "dotenv";
 import { getRoles, createRole, updateRole, deleteRole } from "../controllers/roleController";
 import { createUser, deleteUser, getUsers, updateUser } from "../controllers/userController";
 import { createAuthor, deleteAuthor, getAuthors, updateAuthor } from "../controllers/authorController";
-<<<<<<< HEAD
 import { createBook, deleteBook, getBooks, updateBook } from "../controllers/bookController";
-=======
->>>>>>> 6dd1c0c1154b15623b5f365faafc296ab0a83891
+import { createFavouriteBook, deleteFavouriteBook, getFavouriteBooks, updateFavouriteBook } from "../controllers/favBookController";
+import { createLoan, deleteLoan, getLoans, updateLoan } from "../controllers/loanController";
 
 dotenv.config();
 
@@ -28,6 +27,7 @@ app.get("/healthy", (req, res) => {
         }
     )
 })
+
 
 // roles routes
 app.get("/roles", getRoles)
@@ -52,6 +52,20 @@ app.get("/books", getBooks)
 app.post("/books", createBook)
 app.put("/books/:id", updateBook)
 app.delete("/books/:id", deleteBook)
+
+// book_favourite routes (users-books)
+app.get("/favourite_books", getFavouriteBooks)
+app.post("/favourite_books", createFavouriteBook)
+app.put("/favourite_books/:id", updateFavouriteBook)
+app.delete("/favourite_books/:id", deleteFavouriteBook)
+
+// loans routes (users-books)
+app.get("/loans", getLoans)
+app.post("/loans", createLoan)
+app.put("/loans/:id", updateLoan)
+app.delete("/loans/:id", deleteLoan)
+
+
 
 
 app.listen(PORT, () => {
