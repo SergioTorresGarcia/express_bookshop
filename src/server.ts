@@ -29,37 +29,37 @@ app.get("/healthy", (req, res) => {
 })
 
 
-// roles routes
+// TABLE 1 - roles routes
 app.get("/roles", getRoles)
 app.post("/roles", createRole)
 app.put("/roles/:id", updateRole)
 app.delete("/roles/:id", deleteRole)
 
-// user routes
+// TABLE 2 - user routes
 app.get("/users", getUsers)
 app.post("/users", createUser)
 app.put("/users/:id", updateUser)
 app.delete("/users/:id", deleteUser)
 
-// authors routes
+// TABLE 3 - authors routes
 app.get("/authors", getAuthors)
 app.post("/authors", createAuthor)
 app.put("/authors/:id", updateAuthor)
 app.delete("/authors/:id", deleteAuthor)
 
-// books routes
+// TABLE 4 - books routes
 app.get("/books", getBooks)
 app.post("/books", createBook)
 app.put("/books/:id", updateBook)
 app.delete("/books/:id", deleteBook)
 
-// book_favourite routes (users-books)
+// TABLE 5 - book_favourite routes (users-books)
 app.get("/favourite_books", getFavouriteBooks)
 app.post("/favourite_books", createFavouriteBook)
 app.put("/favourite_books/:id", updateFavouriteBook)
 app.delete("/favourite_books/:id", deleteFavouriteBook)
 
-// loans routes (users-books)
+// TABLE 6 - loans routes (users-books)
 app.get("/loans", getLoans)
 app.post("/loans", createLoan)
 app.put("/loans/:id", updateLoan)
